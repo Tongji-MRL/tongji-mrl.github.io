@@ -7,7 +7,7 @@
   related_missions: [Mission Task 1, Mission Task 3, Mission Task 4]
   description:
   image: /assets/img/robot-x/usv.jpg
-  image_alt: Tongji MRL USV underway on calm water during a field test
+  image_alt: Tongji MRL UAV flying outdoors against the sky
   media_object_position: center
   media_description: Our primary surface platform for navigation, perception and multi-domain mission integration.
   media_link_label: Explore the USV
@@ -20,8 +20,8 @@
   related_missions: [Mission Task 1, Mission Task 3, Mission Task 4]
   description:
   image: /assets/img/robot-x/uav.jpg
-  image_alt: Tongji MRL UAV in a field setup showing the airframe and landing gear clearly
-  media_object_position: center 54%
+  image_alt: Tongji MRL UAV flying outdoors against the sky
+  media_object_position: center
   media_fit: cover
   media_description: Our aerial platform for flight, sensing and coordinated maritime operations.
   media_link_label: Explore the UAV

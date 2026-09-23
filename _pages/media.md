@@ -9,13 +9,47 @@ description: Build, test, observe and iterate — selected moments from Tongji M
 {% assign showcase_media = site.data.media | where: 'verified', true | where: 'showcase', true %}
 {% assign usv_media = showcase_media | where: 'showcase_group', 'usv' | sort: 'showcase_order' %}
 {% assign uav_media = showcase_media | where: 'showcase_group', 'uav' | sort: 'showcase_order' %}
+{% assign team_intro_media = site.data.media | where: "id", "team-intro-video" | first %}
+{% assign supporting_media = site.data.media | where: 'verified', true | where: 'showcase', false | sort: 'gallery_order' %}
+{% assign team_story_media = supporting_media | where: 'gallery_group', 'team-story' %}
+{% assign field_test_media = supporting_media | where: 'gallery_group', 'field-tests' %}
+{% assign aerial_media = supporting_media | where: 'gallery_group', 'aerial-platform' %}
+{% assign identity_media = supporting_media | where: 'gallery_group', 'team-identity' %}
 
 <div class="media-wall-page" data-media-wall>
   <nav class="media-section-nav" aria-label="Media page sections">
+    <a href="#team-intro-media">Team Intro</a>
     <a href="#platforms">Platforms</a>
     <a href="#usv-media">USV Media</a>
     <a href="#uav-media">UAV Media</a>
+    <a href="#team-story-media">Team Story</a>
+    <a href="#field-test-media">Field Tests</a>
+    <a href="#aerial-media">Aerial</a>
+    <a href="#identity-media">Identity</a>
   </nav>
+
+  <section class="media-feature" id="team-intro-media" aria-labelledby="team-intro-title">
+    <div class="media-feature-visual" style="--media-position: center;">
+      {% include figure.liquid path=team_intro_media.poster alt=team_intro_media.alt class="media-feature-image" avoid_scaling=true sizes="(max-width: 699px) 100vw, 1120px" %}
+      <button
+        type="button"
+        class="media-showcase-play media-feature-play"
+        aria-label="Play {{ team_intro_media.title }}"
+        data-media-open
+        data-video-src="{{ team_intro_media.video | relative_url }}"
+        data-video-poster="{{ team_intro_media.poster | relative_url }}"
+        data-video-title="{{ team_intro_media.title }}"
+        data-video-category="{{ team_intro_media.category }}"
+      >
+        <span aria-hidden="true"><i class="fa-solid fa-play"></i></span>
+      </button>
+    </div>
+    <div class="media-feature-copy">
+      <p class="media-section-kicker">Featured / Team Story</p>
+      <h2 id="team-intro-title">{{ team_intro_media.title }}</h2>
+      <p>{{ team_intro_media.description }}</p>
+    </div>
+  </section>
 
   <section class="media-platforms" id="platforms" aria-labelledby="platforms-title">
     <header class="media-section-intro">
@@ -48,6 +82,11 @@ description: Build, test, observe and iterate — selected moments from Tongji M
 
 {% include media-showcase.liquid id="usv-media" kicker="USV Field Notes" title="USV Media" description="Surface-platform testing, assembly and electronics preparation." items=usv_media %}
 {% include media-showcase.liquid id="uav-media" kicker="UAV Field Notes" title="UAV Media" description="Aerial-platform testing and development records." items=uav_media %}
+{% include media-gallery.liquid id="team-story-media" kicker="Team Story" title="People & Team Moments" description="Introduction footage and candid team records that show the working atmosphere behind the platforms." items=team_story_media %}
+{% include media-gallery.liquid id="field-test-media" kicker="Field Tests" title="Water-Side Testing" description="USV runs, field setup views and outdoor debugging records from practical test days." items=field_test_media %}
+{% include media-gallery.liquid id="aerial-media" kicker="Aerial Platform" title="UAV Development" description="UAV flight and debugging records for the aerial platform." items=aerial_media %}
+{% include media-gallery.liquid id="identity-media" kicker="Team Identity" title="Brand & Title Clips" description="Public-facing identity materials for Tongji MRL and Tongji RobotX." items=identity_media %}
+
 </div>
 
 <dialog class="media-viewer" data-media-viewer aria-labelledby="media-viewer-title">

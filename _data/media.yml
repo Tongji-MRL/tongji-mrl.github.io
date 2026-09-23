@@ -72,21 +72,6 @@
   showcase_order: 3
   object_position: center
   verified: true
-- id: usv-field-test-record
-  title: USV Field Test in Heavy Rain
-  category: Field Tests
-  date: 2026-08-20
-  video: assets/video/usv-field-test-diagnosis-web.mp4
-  poster: assets/img/usv-field-test-diagnosis-poster.jpg
-  duration: "0:28"
-  alt: Team members in rain ponchos working around a USV beside a pond during heavy rain
-  description: A field test recording used to observe system behavior and support subsequent debugging and iteration.
-  tags: [field-tests, team-activities, usv]
-  showcase: true
-  showcase_group: usv
-  showcase_order: 5
-  object_position: center
-  verified: true
 - id: usv-deck-overview
   title: USV Deck Overview
   category: Robot Assembly
@@ -104,6 +89,8 @@
   verified: true
 - id: rain-field-test-team
   title: Rainy-Day Field Test Team
+  gallery_order: 21
+  gallery_group: field-tests
   category: Team Activities
   date: 2026-08-20
   image: assets/img/team-rain-field-test.jpg
@@ -116,6 +103,8 @@
   verified: true
 - id: usv-water-test
   title: USV Water Test
+  gallery_order: 22
+  gallery_group: field-tests
   category: Field Tests
   date:
   image: assets/img/robot-x/usv.jpg
@@ -127,6 +116,8 @@
   verified: true
 - id: usv-water-test-bridge
   title: USV Water Test by the Bridge
+  gallery_order: 23
+  gallery_group: field-tests
   category: Field Tests
   date: 2026-08-19
   image: assets/img/usv-water-test-bridge.jpg
@@ -139,6 +130,8 @@
   verified: true
 - id: team-usv-setup
   title: Preparing the USV
+  gallery_order: 24
+  gallery_group: field-tests
   category: Team Activities
   date: 2026-08-19
   image: assets/img/team-usv-setup.jpg
@@ -149,14 +142,127 @@
   showcase_order: 2
   object_position: center 42%
   verified: true
-- id: logo-design
-  title: Tongji RobotX Logo Design
-  category: Design Process
+- id: team-intro-video
+  title: Team Intro Video
+  gallery_order: 1
+  gallery_group: featured-team
+  category: Team Story
   date:
-  image: assets/img/TJMRL.jpg
-  alt: Blue Tongji RobotX logo with a stylized boat and waves
-  description: Tongji RobotX visual identity.
-  tags: [design-process]
+  video: "assets/media/team-intro-video.mp4"
+  poster: "assets/media/team-intro-video-poster.jpg"
+  alt: Tongji MRL team introduction video cover showing the team story
+  description: The featured team introduction film for Tongji MRL, bringing together the people, platforms and preparation behind the team.
+  tags: [team-story, team-introduction, team-activities]
   showcase: false
   object_position: center
+  verified: true
+- id: usv-water-run-uploaded
+  title: USV Water Run
+  gallery_order: 2
+  gallery_group: field-tests
+  category: Field Tests
+  date:
+  video: assets/media/usv-water-run-web.mp4
+  poster: assets/media/posters/usv-water-run-poster.jpg
+  alt: Tongji MRL USV running on the water during a field test
+  description: A water-run clip showing the USV operating in an outdoor test environment.
+  tags: [field-tests, usv]
+  showcase: false
+  object_position: center
+  verified: true
+- id: uav-debug-session
+  title: UAV Debug Session
+  gallery_order: 4
+  gallery_group: aerial-platform
+  category: Aerial Platform
+  date:
+  video: assets/media/uav-debug-session-web.mp4
+  poster: assets/media/posters/uav-debug-poster.jpg
+  alt: Tongji MRL UAV debugging and platform preparation
+  description: A UAV preparation clip showing the aerial platform in a practical debugging workflow.
+  tags: [uav, testing, workshop-build]
+  showcase: false
+  object_position: center
+  verified: true
+- id: rainy-test-day-behind-scenes
+  title: "Behind the Scenes: Rainy Test Day"
+  gallery_order: 3
+  gallery_group: team-story
+  category: Team Activities
+  date:
+  video: assets/media/rainy-test-day-behind-scenes-web.mp4
+  poster: assets/media/posters/rainy-test-day-poster.jpg
+  alt: Tongji MRL team continuing field-test work during rainy weather
+  description: A behind-the-scenes record of the team adapting field-test work around unexpected weather.
+  tags: [team-activities, field-tests]
+  showcase: false
+  object_position: center
+  verified: true
+- id: team-title-clip
+  title: Team Title Clip
+  gallery_order: 6
+  gallery_group: team-identity
+  category: Team Identity
+  date:
+  video: assets/media/team-title-web.mp4
+  poster: assets/media/posters/team-title-poster.jpg
+  alt: Tongji MRL team name and visual identity title sequence
+  description: A short title clip for team identity and social-media style transitions.
+  tags: [team-identity, publicity]
+  showcase: false
+  object_position: center
+  verified: true
+- id: uav-in-flight-uploaded
+  title: UAV In Flight
+  gallery_order: 7
+  gallery_group: aerial-platform
+  category: Aerial Platform
+  date:
+  image: assets/media/uav-in-flight.jpg
+  alt: Tongji MRL UAV flying outdoors against the sky
+  description: A clear in-flight view of the UAV, useful as a quick visual reference for the aerial platform.
+  tags: [uav, field-tests]
+  showcase: false
+  object_position: center
+  media_fit: cover
+  verified: true
+- id: kayak-debug-view
+  title: USV Debugging by the Water
+  gallery_order: 8
+  gallery_group: field-tests
+  category: Field Tests
+  date:
+  image: assets/media/usv-debug-by-water.jpg
+  alt: Tongji MRL surface-platform debugging work beside the water
+  description: A field-side debugging image that shows the practical test environment around the surface platform.
+  tags: [field-tests, usv, testing]
+  showcase: false
+  object_position: center
+  verified: true
+- id: team-break-moment
+  title: Team Break Moment
+  gallery_order: 4
+  gallery_group: team-story
+  category: Team Activities
+  date:
+  image: assets/media/team-break-moment.jpg
+  alt: Tongji MRL team members taking a break during preparation work
+  description: A candid team moment that adds some human texture to the Media page without exposing technical details.
+  tags: [team-activities]
+  showcase: false
+  object_position: center
+  verified: true
+- id: tjmrl-brand-uploaded
+  title: Tongji RobotX Brand Mark
+  gallery_order: 10
+  gallery_group: team-identity
+  category: Team Identity
+  date:
+  image: assets/media/tjmrl-brand.jpg
+  alt: Tongji MRL blue brand mark with stylized marine robotics elements
+  description: The public Tongji RobotX team mark used for media and identity materials.
+  tags: [team-identity, publicity]
+  showcase: false
+  object_position: center
+  media_fit: contain
   verified: true

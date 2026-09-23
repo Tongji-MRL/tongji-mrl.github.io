@@ -1,0 +1,49 @@
+{% assign gallery_id = include.id | default: 'more-media' %}
+{% assign gallery_title_id = gallery_id | append: '-title' %}
+{% assign gallery_kicker = include.kicker | default: 'Selected Records' %}
+{% assign gallery_title = include.title | default: 'More Media' %}
+{% assign gallery_description = include.description | default: 'Additional verified moments from team preparation, field testing and visual identity work.' %}
+
+{% if include.items and include.items.size > 0 %}
+  <section class="media-gallery" id="{{ gallery_id }}" aria-labelledby="{{ gallery_title_id }}">
+    <header class="media-section-intro media-gallery-intro">
+      <p class="media-section-kicker">{{ gallery_kicker }}</p>
+      <h2 id="{{ gallery_title_id }}">{{ gallery_title }}</h2>
+      <p>{{ gallery_description }}</p>
+    </header>
+
+    <div class="media-gallery-grid">
+      {% for item in include.items %}
+        {% assign preview = item.image | default: item.poster %}
+        <article class="media-gallery-card" data-media-reveal style="--media-position: {{ item.object_position | default: 'center' }}; --media-fit: {{ item.media_fit | default: 'cover' }};">
+          <div class="media-gallery-visual">
+            {% include figure.liquid path=preview alt=item.alt class="media-gallery-image" avoid_scaling=true sizes="(max-width: 699px) 100vw, (max-width: 1099px) 50vw, 33vw" %}
+            {% if item.video %}
+              <button
+                type="button"
+                class="media-showcase-play media-gallery-play"
+                aria-label="Play {{ item.title }}"
+                data-media-open
+                data-video-src="{{ item.video | relative_url }}"
+                data-video-poster="{{ item.poster | relative_url }}"
+                data-video-title="{{ item.title }}"
+                data-video-category="{{ item.category }}"
+              >
+                <span aria-hidden="true"><i class="fa-solid fa-play"></i></span>
+              </button>
+            {% endif %}
+          </div>
+          <div class="media-gallery-copy">
+            <div class="media-showcase-labels">
+              <span>{{ item.category }}</span>
+              <span>{% if item.video %}Video{% else %}Photo{% endif %}</span>
+              {% if item.duration %}<span>{{ item.duration }}</span>{% endif %}
+            </div>
+            <h3>{{ item.title }}</h3>
+            <p>{{ item.description }}</p>
+          </div>
+        </article>
+      {% endfor %}
+    </div>
+  </section>
+{% endif %}

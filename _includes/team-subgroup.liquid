@@ -6,7 +6,7 @@
     {% comment %}Render subgroup leaders first, regardless of their order in the data file.{% endcomment %}
     {% for member in site.data.team.members %}
       {% for assignment in member.assignments %}
-        {% if assignment.subgroup == include.subgroup and assignment.role == 'Leader' %}
+        {% if assignment.subgroup == include.subgroup and assignment.role == 'Leader' and assignment.auxiliary != true %}
           <li>
             {% include team-member-trigger.liquid member=member assignment=assignment variant="list" %}
           </li>
@@ -25,7 +25,7 @@
     {% endfor %}
     {% for member in site.data.team.members %}
       {% for assignment in member.assignments %}
-        {% if assignment.subgroup == include.subgroup and assignment.role != 'Leader' and assignment.auxiliary == true %}
+        {% if assignment.subgroup == include.subgroup and assignment.auxiliary == true %}
           <li class="support">
             {% include team-member-trigger.liquid member=member assignment=assignment variant="list" %}
           </li>

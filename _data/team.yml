@@ -84,10 +84,7 @@ members:
     email: 2551691@tongji.edu.cn
     bio:
     links: {}
-    assignments:
-      - subgroup: Mechanics
-        role: Leader
-        auxiliary: false
+    assignments: []
   - id: xuanyu-yang
     name_zh: 杨萱昱
     name_en: Xuanyu Yang
@@ -136,21 +133,6 @@ members:
       - subgroup: Publicity
         role:
         auxiliary: false
-  - id: ci-song
-    name_zh: 宋词
-    name_en: Ci Song
-    role: Leader
-    group: Software
-    photo: assets/img/team/member-ci-song.jpg
-    leadership: false
-    responsibilities: []
-    email: 2553224@tongji.edu.cn
-    bio:
-    links: {}
-    assignments:
-      - subgroup: Planning
-        role: Leader
-        auxiliary: false
   - id: yaxin-shao
     name_zh: 邵雅欣
     name_en: Yaxin Shao
@@ -169,7 +151,7 @@ members:
   - id: yunhuan-cai
     name_zh: 蔡昀桓
     name_en: Yunhuan Cai
-    role:
+    role: Leader
     group: Software
     photo: assets/img/team/member-yunhuan-cai.jpg
     leadership: false
@@ -179,7 +161,7 @@ members:
     links: {}
     assignments:
       - subgroup: Planning
-        role:
+        role: Leader
         auxiliary: false
   - id: cailin-yang
     name_zh: 杨采霖
@@ -194,7 +176,7 @@ members:
     links: {}
     assignments:
       - subgroup: Planning
-        role:
+        role: Leader
         auxiliary: true
       - subgroup: Publicity
         role: Leader

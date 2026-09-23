@@ -50,10 +50,23 @@ nav_order: 7
       <p class="section-label">Engineering</p>
       <h2 id="hardware-title">Hardware Group</h2>
     </header>
-    <div class="subgroup-stack">
-      {% include team-subgroup.liquid subgroup="Control" title="Hardware — Control" %}
-      {% include team-subgroup.liquid subgroup="Mechanics" title="Hardware — Mechanics" %}
-    </div>
+    <ul class="member-list">
+      {% for member in site.data.team.members %}
+        {% assign show_hardware_member = false %}
+        {% for assignment in member.assignments %}
+          {% if assignment.auxiliary != true %}
+            {% if assignment.subgroup == "Control" or assignment.subgroup == "Mechanics" %}
+              {% assign show_hardware_member = true %}
+            {% endif %}
+          {% endif %}
+        {% endfor %}
+        {% if show_hardware_member %}
+          <li>
+            {% include team-member-trigger.liquid member=member variant="list" %}
+          </li>
+        {% endif %}
+      {% endfor %}
+    </ul>
   </section>
 
   <section class="section-panel software-section about-section-reveal" aria-labelledby="software-title">
@@ -83,13 +96,16 @@ nav_order: 7
       <h2 id="video-title">Video Showcase</h2>
     </header>
     <div class="video-showcase">
-      <h3>Team Demonstration Video</h3>
-      <p>A verified team demonstration video will be published here when available.</p>
-      <div class="video-placeholder">Media in preparation</div>
+      <h3>Team Intro Video</h3>
+      <p>Meet the people, platforms and preparation behind Tongji MRL.</p>
+      <div class="responsive-video team-intro-video">
+        {% include video.liquid path="assets/media/team-intro-video.mp4" poster="assets/media/team-intro-video-poster.jpg" alt="Tongji MRL team introduction video" controls=true preload="metadata" playsinline=true %}
+      </div>
     </div>
   </section>
 
 {% for member in site.data.team.members %}
 {% include member-dialog.liquid member=member %}
 {% endfor %}
+
 </main>
